@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0d14">
+  <meta name="description" content="Onlyones Research explores complex questions through AI-assisted research, structured analysis, and clear synthesis.">
+  <title>Onlyones Research — AI-Assisted Deep Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090c12;
+      --panel: #101620;
+      --panel-2: #121b27;
+      --text: #f1f5fb;
+      --muted: #a2adbd;
+      --line: rgba(190, 209, 233, .15);
+      --accent: #a8f0d1;
+      --accent-2: #8ab8ff;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background:
+        radial-gradient(ellipse at 78% 6%, rgba(75, 117, 166, .15), transparent 36%),
+        radial-gradient(ellipse at 4% 36%, rgba(78, 183, 148, .08), transparent 32%),
+        var(--bg);
+      color: var(--text); font-family: "Manrope", sans-serif; line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .mono { font-family: "DM Mono", monospace; text-transform: uppercase; letter-spacing: .14em; font-size: 11px; }
+    header { border-bottom: 1px solid var(--line); }
+    .nav { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.045em; }
+    .mark { width: 34px; height: 34px; border: 1px solid rgba(168,240,209,.55); border-radius: 10px; display: grid; place-items: center; color: var(--accent); font-size: 16px; background: rgba(168,240,209,.06); }
+    .brand span:last-child { font-size: 15px; }
+    .navlinks { display: flex; gap: 28px; color: var(--muted); font-size: 13px; }
+    .navlinks a:hover, .text-link:hover { color: var(--accent); }
+    .nav-cta { border: 1px solid var(--line); border-radius: 999px; padding: 10px 15px; font-size: 12px; transition: .2s; }
+    .nav-cta:hover { border-color: var(--accent); color: var(--accent); }
+    .hero { padding: 105px 0 88px; display: grid; grid-template-columns: 1.08fr .92fr; gap: 64px; align-items: center; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--accent); margin-bottom: 26px; }
+    .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 15px rgba(168,240,209,.8); }
+    h1 { margin: 0; font-size: clamp(44px, 6vw, 76px); letter-spacing: -.075em; line-height: 1.04; font-weight: 700; max-width: 700px; }
+    h1 em { font-style: normal; color: var(--accent); }
+    .hero-copy { color: var(--muted); font-size: 17px; max-width: 550px; margin: 26px 0 32px; line-height: 1.85; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { padding: 13px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; display: inline-flex; gap: 12px; align-items: center; border: 1px solid transparent; transition: transform .2s, border-color .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #09120f; background: var(--accent); }
+    .btn-secondary { border-color: var(--line); color: var(--text); background: rgba(255,255,255,.02); }
+    .btn-secondary:hover { border-color: rgba(168,240,209,.6); }
+    .hero-note { color: #778496; font-size: 11px; margin-top: 20px; }
+    .visual { min-height: 420px; position: relative; display: flex; align-items: center; justify-content: center; }
+    .orbital { width: min(100%, 420px); aspect-ratio: 1; position: relative; border-radius: 50%; border: 1px solid rgba(138,184,255,.22); background: radial-gradient(circle, rgba(138,184,255,.12), rgba(10,16,25,.08) 55%, transparent 70%); }
+    .orbital:before, .orbital:after { content: ""; position: absolute; inset: 12%; border: 1px solid rgba(168,240,209,.2); border-radius: 50%; transform: rotate(-28deg) scaleX(.7); }
+    .orbital:after { inset: 3%; transform: rotate(45deg) scaleX(.55); border-color: rgba(138,184,255,.2); }
+    .core { position: absolute; width: 112px; height: 112px; border-radius: 28px; top: 50%; left: 50%; transform: translate(-50%,-50%) rotate(45deg); background: linear-gradient(145deg, rgba(168,240,209,.18), rgba(138,184,255,.12)); border: 1px solid rgba(168,240,209,.65); box-shadow: 0 0 75px rgba(112,218,183,.13), inset 0 0 30px rgba(168,240,209,.08); }
+    .core:after { content: "OR"; position: absolute; inset: 0; display: grid; place-items: center; transform: rotate(-45deg); color: var(--accent); font-family: "DM Mono", monospace; font-size: 25px; letter-spacing: -.08em; }
+    .node { position: absolute; z-index: 2; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 22px rgba(168,240,209,.65); }
+    .node.n1 { top: 17%; left: 26%; } .node.n2 { right: 13%; top: 43%; background: var(--accent-2); box-shadow: 0 0 22px rgba(138,184,255,.65); }
+    .node.n3 { left: 24%; bottom: 14%; background: var(--accent-2); box-shadow: 0 0 22px rgba(138,184,255,.65); }
+    .float-card { position: absolute; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: rgba(13,19,29,.88); backdrop-filter: blur(12px); box-shadow: 0 18px 60px rgba(0,0,0,.22); }
+    .float-card strong { display: block; font-size: 12px; font-weight: 600; }
+    .float-card span { display: block; color: var(--muted); font-size: 10px; margin-top: 4px; }
+    .fc1 { left: -4%; top: 16%; } .fc2 { right: -3%; bottom: 14%; }
+    .section { padding: 86px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 36px; margin-bottom: 36px; }
+    .section-label { color: var(--accent); margin-bottom: 14px; }
+    h2 { margin: 0; font-size: clamp(30px, 4vw, 46px); letter-spacing: -.06em; line-height: 1.15; max-width: 650px; }
+    .section-intro { color: var(--muted); max-width: 390px; font-size: 14px; margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card { padding: 27px; background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.012)); border: 1px solid var(--line); border-radius: 14px; min-height: 235px; }
+    .card-num { color: var(--accent); font-family: "DM Mono", monospace; font-size: 11px; }
+    .card h3 { font-size: 19px; letter-spacing: -.04em; margin: 30px 0 10px; }
+    .card p { color: var(--muted); font-size: 13px; line-height: 1.8; margin: 0; }
+    .method { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: start; }
+    .method-copy p { color: var(--muted); font-size: 14px; line-height: 1.9; }
+    .steps { border-top: 1px solid var(--line); }
+    .step { display: grid; grid-template-columns: 42px 1fr; gap: 18px; padding: 23px 0; border-bottom: 1px solid var(--line); }
+    .step-index { color: var(--accent); font: 12px "DM Mono", monospace; padding-top: 4px; }
+    .step h3 { margin: 0 0 5px; font-size: 15px; }
+    .step p { margin: 0; color: var(--muted); font-size: 13px; }
+    .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .principle { border: 1px solid var(--line); background: rgba(255,255,255,.02); padding: 24px; border-radius: 12px; }
+    .principle h3 { font-size: 15px; margin: 0 0 8px; }
+    .principle p { color: var(--muted); font-size: 13px; margin: 0; }
+    .cta-panel { border: 1px solid rgba(168,240,209,.24); background: linear-gradient(120deg, rgba(168,240,209,.08), rgba(138,184,255,.045)); padding: clamp(28px, 6vw, 58px); border-radius: 18px; display: flex; align-items: end; justify-content: space-between; gap: 30px; }
+    .cta-panel h2 { max-width: 610px; }
+    .cta-panel p { color: var(--muted); max-width: 550px; font-size: 14px; margin-bottom: 0; }
+    footer { border-top: 1px solid var(--line); padding: 28px 0; color: #7f8b9c; font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-brand { color: var(--text); font-weight: 800; letter-spacing: -.04em; }
+    .backtop { color: var(--muted); }
+    @media (max-width: 800px) {
+      .navlinks { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 28px; padding: 72px 0 62px; }
+      .visual { min-height: 340px; }
+      .orbital { max-width: 330px; }
+      .fc1 { left: 0; } .fc2 { right: 0; }
+      .section { padding: 64px 0; }
+      .section-head, .cta-panel { align-items: start; flex-direction: column; }
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: auto; }
+      .method { grid-template-columns: 1fr; gap: 28px; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: min(var(--max), calc(100% - 32px)); }
+      .nav { height: 70px; }
+      .brand span:last-child { font-size: 13px; }
+      .nav-cta { font-size: 11px; padding: 9px 11px; }
+      .hero-copy { font-size: 15px; }
+      .visual { min-height: 300px; }
+      .orbital { max-width: 285px; }
+      .float-card { padding: 11px 12px; }
+      .fc1 { left: -2px; top: 10%; } .fc2 { right: -2px; bottom: 8%; }
+      .principles { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: start; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Onlyones Research home">
+        <span class="mark">◎</span><span>Onlyones Research</span>
+      </a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#focus">Focus</a><a href="#approach">Approach</a><a href="#principles">Principles</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow mono"><span class="dot"></span> AI-assisted research</div>
+        <h1>Make sense of the <em>complex.</em></h1>
+        <p class="hero-copy">Onlyones Research explores difficult questions through AI-assisted deep research, structured analysis, and clear synthesis — turning scattered information into a more coherent understanding.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#approach">Explore our approach <span aria-hidden="true">↘</span></a>
+          <a class="btn btn-secondary" href="#focus">What we focus on</a>
+        </div>
+        <p class="hero-note">Independent research mindset. Human judgment. AI-assisted workflows.</p>
+      </div>
+      <div class="visual" aria-label="Abstract research network illustration" role="img">
+        <div class="orbital">
+          <span class="node n1"></span><span class="node n2"></span><span class="node n3"></span><span class="core"></span>
+        </div>
+        <div class="float-card fc1"><strong>Explore</strong><span>Ask better questions</span></div>
+        <div class="float-card fc2"><strong>Synthesize</strong><span>Connect the evidence</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="focus">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-label mono">01 / Research focus</div><h2>From information overload to structured insight.</h2></div>
+          <p class="section-intro">We are building around a simple idea: AI can help people investigate complex topics more systematically when paired with careful reasoning and clear communication.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="card-num">01 — DISCOVER</div><h3>Deep exploration</h3><p>Investigate broad questions, map subtopics, and identify useful directions for further research.</p></article>
+          <article class="card"><div class="card-num">02 — CONNECT</div><h3>Structured analysis</h3><p>Organize information into themes, compare perspectives, and make relationships easier to inspect.</p></article>
+          <article class="card"><div class="card-num">03 — CLARIFY</div><h3>Clear synthesis</h3><p>Shape complex material into readable summaries that help people understand what matters and what remains uncertain.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="approach">
+      <div class="wrap method">
+        <div class="method-copy">
+          <div class="section-label mono">02 / Our approach</div>
+          <h2>Research is a process, not just an answer.</h2>
+          <p>Onlyones Research focuses on using AI as a research aid rather than treating generated output as unquestionable truth. The goal is to support exploration, organization, and synthesis while keeping uncertainty visible.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-index">01</div><div><h3>Frame the question</h3><p>Define the problem, scope, and what a useful result should clarify.</p></div></div>
+          <div class="step"><div class="step-index">02</div><div><h3>Explore the landscape</h3><p>Use AI-assisted workflows to investigate relevant concepts and possible connections.</p></div></div>
+          <div class="step"><div class="step-index">03</div><div><h3>Organize and compare</h3><p>Group findings, examine differing perspectives, and distinguish evidence from interpretation.</p></div></div>
+          <div class="step"><div class="step-index">04</div><div><h3>Synthesize responsibly</h3><p>Present the clearest supported picture while acknowledging gaps and uncertainty.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="principles">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-label mono">03 / Principles</div><h2>Curiosity with a critical lens.</h2></div>
+          <p class="section-intro">The quality of research depends not only on speed, but also on how questions are framed and conclusions are evaluated.</p>
+        </div>
+        <div class="principles">
+          <article class="principle"><h3>Clarity over noise</h3><p>Prioritize useful structure and understandable explanations over volume for its own sake.</p></article>
+          <article class="principle"><h3>Evidence-aware thinking</h3><p>Treat outputs as material to examine, not automatic proof. Important claims deserve scrutiny.</p></article>
+          <article class="principle"><h3>Transparent uncertainty</h3><p>Make limitations and unanswered questions part of the research picture.</p></article>
+          <article class="principle"><h3>Human-directed work</h3><p>Use AI to extend exploration while keeping goals, judgment, and accountability in human hands.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="cta-panel">
+          <div>
+            <div class="section-label mono">04 / Connect</div>
+            <h2>Have a complex question worth exploring?</h2>
+            <p>Onlyones Research is interested in thoughtful conversations about AI-assisted research, information synthesis, and ways to make complex topics easier to understand.</p>
+          </div>
+          <a class="btn btn-primary" href="https://github.com/" target="_blank" rel="noopener noreferrer">Find us on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div><span class="footer-brand">Onlyones Research</span><span> &nbsp;·&nbsp; AI-assisted deep research</span></div>
+      <div>© <span id="year"></span> Onlyones Research. All rights reserved.</div>
+      <a class="backtop" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+  <script>
+    // Keep the footer year current.
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Smooth-scroll for same-page navigation, with a graceful fallback.
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      });
+    });
+  </script>
+</body>
+</html>
